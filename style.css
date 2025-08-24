@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+#array-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 400px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+.bar {
+    margin: 2px;
+    background: #3498db;
+    width: 20px;
+    transition: all 0.2s ease;
+}
+
+#algo {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+#algo:hover {
+    border-color: #2980b9;
+    background-color: #ecf0f1;
+}
+
+/* Buttons */
+button {
+    padding: 10px 18px;
+    font-size: 16px;
+    border: 1.75px solid #2980b9;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Generate Button */
+#generate-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+#generate-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Sort Button */
+#sort-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#sort-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Layout */
+.controls {
+    margin: 20px 0;
+    text-align: center;
+}
