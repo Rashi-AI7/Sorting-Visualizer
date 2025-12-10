@@ -4,24 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sorting Algorithm Visualizer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Sorting Algorithm Visualizer</h1>
+    <div class="container">
+        <header>
+            <h1>🔄 Sorting Algorithm Visualizer</h1>
+            <p>Watch algorithms come to life with interactive visualizations</p>
+        </header>
 
-    <div class="controls">
-        <button onclick="generateArray()">Generate Array</button>
-        <select id="algo">
-            <option value="bubble">Bubble Sort</option>
-            <option value="selection">Selection Sort</option>
-            <option value="insertion">Insertion Sort</option>
-        </select>
-        <button onclick="startSort()">Sort</button>
+        <div class="controls-panel">
+            <div class="control-group">
+                <label for="array-size">Array Size</label>
+                <input type="range" id="array-size" min="10" max="50" value="20" oninput="updateArraySize(this.value)">
+                <span id="size-display">20</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="speed">Animation Speed</label>
+                <input type="range" id="speed" min="1" max="10" value="5" oninput="updateSpeed(this.value)">
+                <span id="speed-display">5x</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="algo">Algorithm</label>
+                <select id="algo">
+                    <option value="bubble">🫧 Bubble Sort</option>
+                    <option value="selection">🎯 Selection Sort</option>
+                    <option value="insertion">📝 Insertion Sort</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-generate" onclick="generateArray()">
+                    <span>🎲</span> Generate New Array
+                </button>
+                <button class="btn btn-sort" onclick="startSort()" id="sort-btn">
+                    <span>▶️</span> Start Sorting
+                </button>
+            </div>
+        </div>
+
+        <div class="stats-panel">
+            <div class="stat">
+                <span class="stat-label">Comparisons</span>
+                <span class="stat-value" id="comparisons">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Swaps</span>
+                <span class="stat-value" id="swaps">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Time</span>
+                <span class="stat-value" id="time">0s</span>
+            </div>
+        </div>
+
+        <div class="visualization-container">
+            <div id="array-container"></div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #3498db;"></div>
+                <span>Unsorted</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #e74c3c;"></div>
+                <span>Comparing</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f39c12;"></div>
+                <span>Current Min</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #f1c40f;"></div>
+                <span>New Min</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #27ae60;"></div>
+                <span>Sorted</span>
+            </div>
+        </div>
     </div>
-
-    <div id="array-container"></div>
 
     <script src="script.js"></script>
 </body>
